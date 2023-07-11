@@ -1,5 +1,5 @@
 import React from "react";
-import { interpolateRgb, interpolateHcl } from "d3-interpolate";
+import { interpolateRgb } from "d3-interpolate";
 import { Monster } from "./types";
 
 const MAX = 30;

@@ -49,4 +49,3 @@ export const MonsterCard: React.FC<Props> = ({ monster, dispatch }) => {
     </div>
   );
 };
-export { selectMonsterImage };

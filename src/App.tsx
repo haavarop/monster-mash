@@ -1,8 +1,4 @@
-import {
-  QueryClient,
-  QueryClientProvider,
-  parseMutationFilterArgs,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Search } from "./Components/Search";
 import { Reducer, useReducer } from "react";
 import { Monster } from "./types";
