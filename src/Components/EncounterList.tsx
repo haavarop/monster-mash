@@ -46,8 +46,8 @@ export const EncounterList: React.FC<Props> = ({ state, dispatch }) => {
         </>
       ) : (
         <button
-          className="bg-transparent	"
-          onClick={() => setDrawerIsOpen(!drawerIsOpen)}
+          className="bg-transparent	w-full flex justify-center"
+          onClick={() => setDrawerIsOpen(true)}
         >
           <SiMonster />
         </button>

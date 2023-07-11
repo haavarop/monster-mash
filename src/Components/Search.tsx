@@ -4,6 +4,7 @@ import { Monster } from "../types";
 import { MonsterCard } from "./MonsterCard";
 import { Action } from "../App";
 import { Loader } from "./Loader";
+import { GiDiceTwentyFacesOne } from "react-icons/gi";
 
 const fetchData = async (pageIndex: number) => {
   console.log("Fetching", pageIndex);
@@ -26,6 +27,7 @@ export const Search: React.FC<Props> = ({ dispatch }) => {
     data: monsterData,
     isLoading,
     isFetching,
+    isError,
   } = useInfiniteQuery<{
     results: Monster[];
   }>({
@@ -38,6 +40,14 @@ export const Search: React.FC<Props> = ({ dispatch }) => {
       fetchNextPage({ pageParam: nextPageIndex });
     }
   }, [nextPageIndex, fetchNextPage]);
+
+  if (isError) {
+    return (
+      <p className="flex items-center text-red-600 text-4xl">
+        Critical failure (noe gikk galt) <GiDiceTwentyFacesOne />
+      </p>
+    );
+  }
 
   return (
     <>

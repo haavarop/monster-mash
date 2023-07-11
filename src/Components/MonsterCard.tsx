@@ -1,10 +1,9 @@
 import React from "react";
 import { Monster } from "../types";
 import { ChallangeRating } from "../ChallangeRating";
-import { BsFillShieldFill, BsPlus } from "react-icons/bs";
+import { BsFillShieldFill } from "react-icons/bs";
 import { Trait } from "./Trait";
 import { Action } from "../App";
-import { Button } from "./Button";
 import { selectMonsterImage } from "../utils";
 
 type Props = {
@@ -15,7 +14,11 @@ type Props = {
 
 export const MonsterCard: React.FC<Props> = ({ monster, dispatch }) => {
   return (
-    <div className="border-2 bg-paper rounded flex-col items-center md:flex-row flex border-red-600	">
+    <button
+      title="Klikk for å legge til"
+      onClick={() => dispatch({ type: "add", monster })}
+      className="border-2 bg-paper rounded flex-col items-center md:flex-row flex border-red-600	"
+    >
       <img
         src={selectMonsterImage(monster)}
         className="max-h-64 md:w-24 rounded"
@@ -40,12 +43,7 @@ export const MonsterCard: React.FC<Props> = ({ monster, dispatch }) => {
           <Trait trait="WIS" value={monster.wisdom} />
           <Trait trait="CHR" value={monster.charisma} />
         </div>
-        <div className="justify-center">
-          <Button onClick={() => dispatch({ type: "add", monster })}>
-            <BsPlus /> Legg til
-          </Button>
-        </div>
       </div>
-    </div>
+    </button>
   );
 };

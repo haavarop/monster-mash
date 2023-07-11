@@ -12,5 +12,4 @@ export type Monster = {
   dexterity: number;
   wisdom: number;
   strength: number;
-
 };
