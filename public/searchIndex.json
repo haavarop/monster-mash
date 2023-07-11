@@ -1,0 +1,30 @@
+{
+  "count": 5,
+  "results": [
+    {
+      "index": "aboleth",
+      "name": "Aboleth",
+      "url": "/api/monsters/aboleth"
+    },
+    {
+      "index": "acolyte",
+      "name": "Acolyte",
+      "url": "/api/monsters/acolyte"
+    },
+    {
+      "index": "bandit",
+      "name": "Bandit",
+      "url": "/api/monsters/bandit"
+    },
+    {
+      "index": "crab",
+      "name": "Crab",
+      "url": "/api/monsters/crab"
+    },
+    {
+      "index": "minotaur-skeleton",
+      "name": "Minotaur Skeleton",
+      "url": "/api/monsters/minotaur-skeleton"
+    }
+  ]
+}
