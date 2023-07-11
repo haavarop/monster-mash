@@ -23,7 +23,5 @@ export const calculateTotalChallange = ({ monsters }: State) => {
     initialValue
   );
 
-  console.log(crSum);
-
   return { totalCr: crSum, monsterCount };
 };

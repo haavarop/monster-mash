@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Action, State } from "../App";
 import { SiMonster } from "react-icons/si";
 import { EnocunterCard } from "./EnocunterCard";
@@ -11,7 +11,15 @@ type Props = {
 
 export const EncounterList: React.FC<Props> = ({ state, dispatch }) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState<boolean>(false);
+  const [drawerIsOpenedOnce, setIsOpenedOnce] = useState(false);
   const { totalCr, monsterCount } = calculateTotalChallange(state);
+
+  useEffect(() => {
+    if (!drawerIsOpenedOnce && Object.keys(state.monsters).length > 0) {
+      setDrawerIsOpen(true);
+    }
+  }, [state, drawerIsOpenedOnce, setDrawerIsOpen]);
+
   return (
     <div className="bg-paper flex flex-col items-center overflow-y-scroll px-8 w-full md:w-[40vw] py-2 border border-rounded border-red-600">
       {drawerIsOpen ? (
@@ -26,7 +34,10 @@ export const EncounterList: React.FC<Props> = ({ state, dispatch }) => {
                 </p>
                 <button
                   className="bg-transparent ml-2"
-                  onClick={() => setDrawerIsOpen(false)}
+                  onClick={() => {
+                    setDrawerIsOpen(false);
+                    setIsOpenedOnce(true);
+                  }}
                 >
                   <GrClose />
                 </button>
